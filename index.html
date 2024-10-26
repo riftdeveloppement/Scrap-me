@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrap Me</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 class="dynamic-title">Scrap Me</h1>
+    
+    <div class="input-container">
+        <input type="text" id="urlInput" placeholder="Enter the URL you want to scrap" />
+        <button id="scrapButton" class="send-button">
+            <img src="send-icon.png" alt="Send" />
+        </button>
+    </div>
+    
+    <div id="resultContainer" class="result-container">
+        <h2>Résultats :</h2>
+        <pre id="resultText"></pre>
+    </div>
+    
+    <button id="downloadButton" class="hidden">Download</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
