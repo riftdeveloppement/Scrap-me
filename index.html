@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proxy Checker</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
@@ -16,19 +17,32 @@
             <button onclick="setProtocol('HTTP')">HTTP</button>
             <button onclick="setProtocol('HTTPS')">HTTPS</button>
         </div>
-        <div class="upload-section">
+
+        <div id="upload-section" class="upload-section hidden">
             <p>Upload your proxy list (.txt):</p>
             <input type="file" id="proxyFile" accept=".txt">
+            <button onclick="checkProxies()">Check Proxies</button>
         </div>
-        <button onclick="checkProxies()">Check Proxies</button>
-        
-        <div class="result-section">
-            <h3>Valid Proxies</h3>
-            <textarea id="validProxies" readonly></textarea>
-            <button onclick="downloadValidProxies()">Download Valid Proxies</button>
-            
-            <h3>Invalid Proxies</h3>
-            <textarea id="invalidProxies" readonly></textarea>
+
+        <div id="result-section" class="result-section hidden">
+            <div class="result-box">
+                <h3>Valid Proxies</h3>
+                <div class="status">
+                    <div class="status-light green"></div>
+                    <span>Valid</span>
+                </div>
+                <textarea id="validProxies" readonly></textarea>
+                <button onclick="downloadValidProxies()">Download Valid Proxies</button>
+            </div>
+
+            <div class="result-box">
+                <h3>Invalid Proxies</h3>
+                <div class="status">
+                    <div class="status-light red"></div>
+                    <span>Invalid</span>
+                </div>
+                <textarea id="invalidProxies" readonly></textarea>
+            </div>
         </div>
     </div>
     <script src="script.js"></script>
