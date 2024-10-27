@@ -1,28 +1,36 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scrap Me</title>
+    <title>Proxy Checker</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1 class="dynamic-title">Scrap Me</h1>
-    
-    <div class="input-container">
-        <input type="text" id="urlInput" placeholder="Enter the URL you want to scrap" />
-        <button id="scrapButton" class="send-button">
-            <img src="send-icon.png" alt="Send" />
-        </button>
+    <div class="container">
+        <h1>Proxy Checker</h1>
+        <div class="protocol-selection">
+            <p>Select Protocol:</p>
+            <button onclick="setProtocol('SOCKS4')">SOCKS4</button>
+            <button onclick="setProtocol('SOCKS5')">SOCKS5</button>
+            <button onclick="setProtocol('HTTP')">HTTP</button>
+            <button onclick="setProtocol('HTTPS')">HTTPS</button>
+        </div>
+        <div class="upload-section">
+            <p>Upload your proxy list (.txt):</p>
+            <input type="file" id="proxyFile" accept=".txt">
+        </div>
+        <button onclick="checkProxies()">Check Proxies</button>
+        
+        <div class="result-section">
+            <h3>Valid Proxies</h3>
+            <textarea id="validProxies" readonly></textarea>
+            <button onclick="downloadValidProxies()">Download Valid Proxies</button>
+            
+            <h3>Invalid Proxies</h3>
+            <textarea id="invalidProxies" readonly></textarea>
+        </div>
     </div>
-    
-    <div id="resultContainer" class="result-container">
-        <h2>Résultats :</h2>
-        <pre id="resultText"></pre>
-    </div>
-    
-    <button id="downloadButton" class="hidden">Download</button>
-
     <script src="script.js"></script>
 </body>
 </html>
