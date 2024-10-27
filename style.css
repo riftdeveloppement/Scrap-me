@@ -23,8 +23,14 @@ body {
 
 h1 {
     color: #333;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     font-weight: 600;
+}
+
+.instructions {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 20px;
 }
 
 /* Button styles */
@@ -43,6 +49,15 @@ button {
 button:hover {
     background-color: #0056b3;
     transform: translateY(-3px);
+}
+
+button.active {
+    transform: scale(1.1);
+    background-color: #004080;
+}
+
+button.inactive {
+    background-color: #007bff;
 }
 
 /* Hidden elements */
@@ -97,6 +112,18 @@ textarea {
     background-color: #dc3545;
 }
 
+/* Footer styles */
+footer {
+    margin-top: 20px;
+    font-size: 12px;
+}
+
+footer .rift {
+    font-weight: 600;
+    color: #007bff;
+    animation: blinkText 1s infinite;
+}
+
 /* Animations */
 @keyframes fadeIn {
     from {
@@ -110,6 +137,15 @@ textarea {
 }
 
 @keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+@keyframes blinkText {
     0%, 100% {
         opacity: 1;
     }
