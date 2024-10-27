@@ -8,6 +8,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    min-height: 100%;
 }
 
 .container {
@@ -15,12 +16,15 @@ body {
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
-    width: 450px;
+    width: 100%;
+    max-width: 900px;
     text-align: center;
     opacity: 0;
     animation: fadeIn 1.5s forwards;
+    box-sizing: border-box;
 }
 
+/* Instructions styles */
 h1 {
     color: #333;
     margin-bottom: 10px;
@@ -28,8 +32,8 @@ h1 {
 }
 
 .instructions {
-    font-size: 14px;
-    color: #777;
+    font-size: 16px;
+    color: #555;
     margin-bottom: 20px;
 }
 
@@ -43,7 +47,7 @@ button {
     border-radius: 50px;
     cursor: pointer;
     font-weight: 600;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 button:hover {
@@ -54,13 +58,14 @@ button:hover {
 button.active {
     transform: scale(1.1);
     background-color: #004080;
+    box-shadow: 0 0 15px rgba(0, 64, 128, 0.5);
 }
 
 button.inactive {
     background-color: #007bff;
 }
 
-/* Hidden elements */
+/* Hidden elements for upload and validation */
 .hidden {
     opacity: 0;
     pointer-events: none;
@@ -114,8 +119,9 @@ textarea {
 
 /* Footer styles */
 footer {
-    margin-top: 20px;
-    font-size: 12px;
+    margin-top: 40px;
+    font-size: 14px;
+    text-align: center;
 }
 
 footer .rift {
