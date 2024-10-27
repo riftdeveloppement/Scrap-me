@@ -1,16 +1,28 @@
 let selectedProtocol = '';
+const buttons = document.querySelectorAll('button');
 
 function setProtocol(protocol) {
     selectedProtocol = protocol;
     alert(`Protocol selected: ${protocol}`);
 
-    // Make the upload section appear with animation
-    const uploadSection = document.getElementById('upload-section');
-    uploadSection.classList.add('show');
+    // Make buttons interactive
+    buttons.forEach(button => {
+        button.classList.remove('active');
+        button.classList.add('inactive');
+    });
 
-    // Hide result section until we check the proxies
+    document.getElementById(`${protocol.toLowerCase()}-btn`).classList.add('active');
+
+    // Hide and reset the upload and result sections if a new protocol is selected
+    const uploadSection = document.getElementById('upload-section');
     const resultSection = document.getElementById('result-section');
+
+    uploadSection.classList.remove('show');
     resultSection.classList.remove('show');
+
+    setTimeout(() => {
+        uploadSection.classList.add('show');
+    }, 500); // Delay the appearance for a smooth transition
 }
 
 function checkProxies() {
