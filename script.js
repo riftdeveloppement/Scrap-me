@@ -3,6 +3,14 @@ let selectedProtocol = '';
 function setProtocol(protocol) {
     selectedProtocol = protocol;
     alert(`Protocol selected: ${protocol}`);
+
+    // Make the upload section appear with animation
+    const uploadSection = document.getElementById('upload-section');
+    uploadSection.classList.add('show');
+
+    // Hide result section until we check the proxies
+    const resultSection = document.getElementById('result-section');
+    resultSection.classList.remove('show');
 }
 
 function checkProxies() {
@@ -44,6 +52,10 @@ function checkProxies() {
 function displayResults(validProxies, invalidProxies) {
     document.getElementById('validProxies').value = validProxies.join('\n');
     document.getElementById('invalidProxies').value = invalidProxies.join('\n');
+
+    // Show the result section with animation
+    const resultSection = document.getElementById('result-section');
+    resultSection.classList.add('show');
 }
 
 function downloadValidProxies() {
