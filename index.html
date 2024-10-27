@@ -10,12 +10,14 @@
 <body>
     <div class="container">
         <h1>Proxy Checker</h1>
+        <p class="instructions">Please select a protocol to check your proxy list.</p>
+
         <div class="protocol-selection">
             <p>Select Protocol:</p>
-            <button onclick="setProtocol('SOCKS4')">SOCKS4</button>
-            <button onclick="setProtocol('SOCKS5')">SOCKS5</button>
-            <button onclick="setProtocol('HTTP')">HTTP</button>
-            <button onclick="setProtocol('HTTPS')">HTTPS</button>
+            <button id="socks4-btn" onclick="setProtocol('SOCKS4')">SOCKS4</button>
+            <button id="socks5-btn" onclick="setProtocol('SOCKS5')">SOCKS5</button>
+            <button id="http-btn" onclick="setProtocol('HTTP')">HTTP</button>
+            <button id="https-btn" onclick="setProtocol('HTTPS')">HTTPS</button>
         </div>
 
         <div id="upload-section" class="upload-section hidden">
@@ -44,6 +46,10 @@
                 <textarea id="invalidProxies" readonly></textarea>
             </div>
         </div>
+
+        <footer>
+            <p>DEV BY <span class="rift">R!FT</span></p>
+        </footer>
     </div>
     <script src="script.js"></script>
 </body>
